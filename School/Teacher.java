@@ -29,13 +29,13 @@ public class Teacher {
         this.salary = salary;
     }
 
-    public void receiveSalary(double salary) {
+    public void receiveSalary(int salary) {
         salaryEarned += salary;
         School.updateTotalMoneySpend(salary);
     }
 
     @Override
     public String toString() {
-        return "Name of the teacher: " + name + " Total salary earned so far " + salaryEarned;
+        return "Name of the teacher; " + name + " Total salary earned so far " + salaryEarned;
     }
 }

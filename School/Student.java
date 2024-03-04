@@ -7,7 +7,7 @@ public class Student {
     private double feesPaid;
     private double feesTotal;
 
-    Student(int id, String name, int grade) {
+    public Student(int id, String name, int grade) {
         this.feesPaid = 0;
         this.feesTotal = 30000;
         this.id = id;
@@ -40,11 +40,11 @@ public class Student {
     }
 
     public void payFees(double payment) {
-        feesPaid = feesPaid + payment;
+        feesPaid += payment;
+        School.setTotalMoneyEarned(payment);
     }
 
     public double remainFees() {
-        double remainFees = feesTotal - feesPaid;
-        return remainFees;
+        return feesTotal - feesPaid;
     }
 }

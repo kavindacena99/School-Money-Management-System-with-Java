@@ -1,6 +1,7 @@
 package School;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class School {
     private List<Teacher> teachers;
@@ -8,11 +9,9 @@ public class School {
     private static double totalMoneyEarned;
     private static double totalMoneySpend;
 
-    School(List<Teacher> teachers, List<Student> students) {
+    public School(List<Teacher> teachers, List<Student> students) {
         this.teachers = teachers;
         this.students = students;
-        totalMoneyEarned = 0;
-        totalMoneySpend = 0;
     }
 
     public List<Teacher> getTeachers() {
@@ -31,19 +30,19 @@ public class School {
         students.add(student);
     }
 
-    public double getTotalMoneyEarned() {
+    public static double getTotalMoneyEarned() {
         return totalMoneyEarned;
     }
 
-    public double getTotalMoneySpend() {
+    public static void setTotalMoneyEarned(double totalMoneyEarned) {
+        School.totalMoneyEarned += totalMoneyEarned;
+    }
+
+    public static double getTotalMoneySpend() {
         return totalMoneySpend;
     }
 
-    public static void setTotalMoneyEarned(double totalMoneyEarned) {
-        totalMoneyEarned -= totalMoneyEarned;
-    }
-
     public static void updateTotalMoneySpend(double totalMoneySpend) {
-        totalMoneySpend -= totalMoneySpend;
+        School.totalMoneySpend += totalMoneySpend;
     }
 }
